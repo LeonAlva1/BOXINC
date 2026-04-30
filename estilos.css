@@ -1,0 +1,411 @@
+/* estilos.css — Estilos para el proyecto Base de Datos Prime */
+/* Sin frameworks externos, CSS simple y prolijo */
+
+/* ===== VARIABLES DE COLOR ===== */
+:root {
+    --azul:       #1c2b4a;   /* color principal del encabezado */
+    --rojo:       #c8281e;   /* color de acento */
+    --fondo:      #f0ede6;   /* fondo de la página */
+    --blanco:     #ffffff;
+    --borde:      #ddd8d0;
+    --texto:      #1a1a1a;
+    --gris:       #666666;
+    --verde:      #2e7d32;
+    --amarillo:   #f59e0b;
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ===== ENCABEZADO ===== */
+header {
+    background-color: var(--azul);
+    color: white;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--rojo);
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav {
+    display: flex;
+    gap: 4px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.15s;
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+/* ===== BANNER DE PÁGINA ===== */
+.banner {
+    background-color: var(--azul);
+    color: white;
+    padding: 20px 24px 16px;
+    border-bottom: 3px solid var(--rojo);
+}
+
+.banner h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.banner p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+}
+
+/* ===== MENSAJES (éxito / error / aviso) ===== */
+.mensaje {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.mensaje.exito {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--verde);
+    color: #1b5e20;
+}
+
+.mensaje.error {
+    background-color: #fdecea;
+    border-left: 4px solid var(--rojo);
+    color: #7b1a1a;
+}
+
+.mensaje.aviso {
+    background-color: #fff8e1;
+    border-left: 4px solid var(--amarillo);
+    color: #7a4f00;
+}
+
+/* ===== TARJETA (formularios, paneles) ===== */
+.tarjeta {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.tarjeta h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--borde);
+    color: var(--azul);
+}
+
+/* ===== FORMULARIOS ===== */
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris);
+    margin-bottom: 5px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 3px;
+    font-size: 14px;
+    color: var(--texto);
+    background-color: var(--blanco);
+    transition: border-color 0.15s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--rojo);
+}
+
+/* Fila de campos en columnas */
+.fila-campos {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fila-campos .campo {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.btn-principal {
+    background-color: var(--rojo);
+    color: white;
+}
+
+.btn-principal:hover {
+    background-color: #a82018;
+}
+
+.btn-secundario {
+    background-color: var(--azul);
+    color: white;
+}
+
+.btn-secundario:hover {
+    background-color: #152238;
+}
+
+.btn-borde {
+    background-color: transparent;
+    color: var(--azul);
+    border: 1px solid var(--borde);
+}
+
+.btn-borde:hover {
+    border-color: var(--azul);
+    background-color: #eee;
+}
+
+.btn-chico {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+/* Grupo de botones */
+.botones {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* ===== BARRA SUPERIOR DE SECCIÓN ===== */
+.barra-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.barra-seccion h3 {
+    font-size: 16px;
+    color: var(--azul);
+}
+
+/* ===== TABLA ===== */
+.tabla-contenedor {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: var(--azul);
+    color: white;
+}
+
+thead th {
+    padding: 11px 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--borde);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #faf8f4;
+}
+
+tbody td {
+    padding: 10px 14px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* Texto sin datos */
+.sin-datos {
+    text-align: center;
+    color: var(--gris);
+    padding: 30px !important;
+    font-style: italic;
+}
+
+/* ===== BADGES (etiquetas de estado) ===== */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-verde {
+    background-color: #e8f5e9;
+    color: var(--verde);
+}
+
+.badge-rojo {
+    background-color: #fdecea;
+    color: var(--rojo);
+}
+
+/* ===== GRID DE MÓDULOS (para index.php) ===== */
+.grid-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.modulo-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    padding: 24px 20px;
+    text-decoration: none;
+    color: var(--texto);
+    display: block;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.modulo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--rojo);
+}
+
+.modulo-icono {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modulo-nombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--azul);
+    margin-bottom: 6px;
+}
+
+.modulo-desc {
+    font-size: 13px;
+    color: var(--gris);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: var(--azul);
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+footer span {
+    color: var(--rojo);
+}
+
+/* ===== RESPONSIVE BÁSICO ===== */
+@media (max-width: 600px) {
+    nav a {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+
+    .fila-campos {
+        flex-direction: column;
+    }
+
+    .grid-modulos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
